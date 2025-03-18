@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <h2 class="h2">Manutenção de Carros</h2>
+
+  <button (click)="navegarParaFormulario()" class="btn btn-success mt-5">
+    Cadastrar
+  </button>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Proprietário</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Ano</th>
+        <th>Cor</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let carro of carros">
+        <td>{{ carro.proprietario }}</td>
+        <td>{{ carro.marca }}</td>
+        <td>{{ carro.modelo }}</td>
+        <td>{{ carro.ano }}</td>
+        <td>{{ carro.cor }}</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button
+              (click)="navegarParaFormulario(carro.id)"
+              class="btn btn-primary"
+            >
+              Editar
+            </button>
+            <button (click)="excluir(carro.id!)" class="btn btn-danger">
+              Excluir
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
