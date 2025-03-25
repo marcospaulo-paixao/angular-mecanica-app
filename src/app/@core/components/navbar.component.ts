@@ -32,6 +32,9 @@ import {Router} from '@angular/router';
               </a>
             </li>
           </ul>
+          <button class="btn btn-outline-secondary ms-auto" (click)="toggleTheme()">
+            <i class="fas" [class.fa-moon]="isDarkTheme" [class.fa-sun]="!isDarkTheme"></i>
+          </button>
         </div>
       </div>
     </nav>
@@ -46,10 +49,17 @@ export class NavbarComponent {
     {label: 'Carro', link: '/carro', icon: 'fas fa-tools'},
   ];
 
+  isDarkTheme = true;
+
   constructor(private router: Router) {
   }
 
   isActive(link: string): boolean {
     return this.router.url.startsWith(link);
+  }
+
+  toggleTheme(): void {
+    this.isDarkTheme = !this.isDarkTheme;
+    document.documentElement.setAttribute('data-bs-theme', this.isDarkTheme ? 'dark' : 'light');
   }
 }
