@@ -50,6 +50,6 @@ export class NavbarComponent {
   }
 
   isActive(link: string): boolean {
-    return this.router.url === link;
+    return this.router.url.startsWith(link);
   }
 }
