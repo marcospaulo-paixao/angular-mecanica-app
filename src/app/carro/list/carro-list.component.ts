@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Carro } from '../carro.model';
-import { CarroService } from '../carro.service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Carro} from '../carro.model';
+import {CarroService} from '../carro.service';
+import {Router} from '@angular/router';
+import {AlertService, AlertType} from "../../@core/service/alert.service";
 
 @Component({
   selector: 'app-carro-list',
@@ -13,12 +14,14 @@ export class CarroListComponent implements OnInit {
 
   constructor(
     private readonly carroService: CarroService,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly alert: AlertService
   ) {
     this.carregarTabela();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   carregarTabela() {
     /* VAI NO BACKEND E BUSCA OS DADOS ATUALIZADOS */
@@ -42,6 +45,7 @@ export class CarroListComponent implements OnInit {
     this.carroService.excluir(id).subscribe({
       next: () => {
         this.carregarTabela();
+        this.alert.show({description: 'Registro excluído com sucesso', type: AlertType.SUCCESS, delay: 3000})
       },
     });
   }
