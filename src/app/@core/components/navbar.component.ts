@@ -28,7 +28,7 @@ import {Router} from '@angular/router';
                 class="nav-link"
                 [class.active]="isActive(item.link)"
                 [routerLink]="[item.link]">
-                {{ item.label }}
+                <i [class]="item.icon"></i> {{ item.label }}
               </a>
             </li>
           </ul>
@@ -40,10 +40,10 @@ import {Router} from '@angular/router';
 export class NavbarComponent {
 
   menuItems = [
-    {label: 'Inicio', link: '/inicio'},
-    {label: 'Marca', link: '/marca'},
-    {label: 'Modelo', link: '/modelo'},
-    {label: 'Carro', link: '/carro'},
+    {label: 'Inicio', link: '/inicio', icon: 'fas fa-home'},
+    {label: 'Marca', link: '/marca', icon: 'fas fa-tag'},
+    {label: 'Modelo', link: '/modelo', icon: 'fas fa-car'},
+    {label: 'Carro', link: '/carro', icon: 'fas fa-tools'},
   ];
 
   constructor(private router: Router) {

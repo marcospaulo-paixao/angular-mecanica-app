@@ -1,11 +1,8 @@
 <div class="container mt-5">
   <h2 class="h2">Manutenção de Carros</h2>
-
   <button (click)="navegarParaFormulario()" class="btn btn-success mt-5">
-    Cadastrar
-  </button>
-
-  <table class="table table-striped">
+    <i class="fas fa-plus"></i> Cadastrar
+  </button><table class="table table-striped">
     <thead>
       <tr>
         <th>Proprietário</th>
@@ -29,10 +26,10 @@
               (click)="navegarParaFormulario(carro.id)"
               class="btn btn-primary"
             >
-              Editar
+              <i class="fas fa-edit"></i> Editar
             </button>
             <button (click)="excluir(carro.id!)" class="btn btn-danger">
-              Excluir
+              <i class="fas fa-trash"></i> Excluir
             </button>
           </div>
         </td>
