@@ -47,7 +47,7 @@ export class CarroFormComponent implements OnInit {
     });
   }
 
-  cancelar() {
+  navegarParaListagem() {
     this.router.navigate(['/carro']);
   }
 
@@ -111,14 +111,14 @@ export class CarroFormComponent implements OnInit {
       if (this.id) {
         this.carroService.atualizar(this.id, carro).subscribe({
           next: () => {
-            this.router.navigate(['/carro']);
+            this.navegarParaListagem()
             this.alert.show({description: 'Registro atualizado com sucesso', type: AlertType.SUCCESS, delay: 3000})
           },
         });
       } else {
         this.carroService.criar(carro).subscribe({
           next: () => {
-            this.router.navigate(['/carro']);
+            this.navegarParaListagem()
             this.alert.show({description: 'Registro criado com sucesso', type: AlertType.SUCCESS, delay: 3000})
           },
         });
