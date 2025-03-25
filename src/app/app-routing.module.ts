@@ -1,8 +1,13 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'carro', pathMatch: 'full'}, // REDIRECIONAR PARA O CARRO
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+  {
+    path: 'inicio',
+    loadChildren: () =>
+      import('./inicio/inicio.module').then((m) => m.InicioModule),
+  },
   {
     path: 'carro',
     loadChildren: () =>
@@ -14,5 +19,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}
