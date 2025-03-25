@@ -38,7 +38,7 @@
   </table>
   <ng-container [ngPlural]="carros?.length ?? 0">
     <ng-template ngPluralCase="=0">Nenhum item encontrado.</ng-template>
-    <ng-template ngPluralCase="=1">1 item encontrado</ng-template>
+    <ng-template ngPluralCase="=1">1 item encontrado.</ng-template>
     <ng-template ngPluralCase="other">{{ carros!.length! }} itens encontrados.</ng-template>
   </ng-container>
 </div>
