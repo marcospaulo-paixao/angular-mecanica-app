@@ -86,7 +86,6 @@ export class AlertItem implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    console.log("AlertItem ---> ngAfterViewInit", )
     this.initTimeout();
   }
 
