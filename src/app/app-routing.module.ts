@@ -13,6 +13,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./carro/carro.module').then((m) => m.CarroModule),
   },
+  {
+    path: 'marca',
+    loadChildren: () =>
+      import('./marca/marca.module').then((m) => m.MarcaModule),
+  },
 ];
 
 @NgModule({
