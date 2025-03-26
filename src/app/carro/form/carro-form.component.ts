@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Carro } from '../carro.model';
 import { CarroService } from '../carro.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertService, AlertType } from '../../@core/service/alert.service';
+import { AlertService } from '../../@core/service/alert.service';
 
 @Component({
   selector: 'app-carro-form',
@@ -55,46 +55,51 @@ export class CarroFormComponent implements OnInit {
     let formularioPreenchido: boolean = true;
 
     if (!this.proprietario) {
-      this.alert.show({
-        description: 'Informe o proprietário do carro',
-        type: AlertType.DANGER,
-        delay: 3000,
+      this.alert.add({
+        summary: "Erro!",
+        detail: 'Informe o proprietário do carro',
+        severity: "danger",
+        life: 3000,
       });
       formularioPreenchido = false;
     }
 
     if (!this.marca) {
-      this.alert.show({
-        description: 'Informe a marca do carro',
-        type: AlertType.DANGER,
-        delay: 3000,
+      this.alert.add({
+        summary: "Erro!",
+        detail: 'Informe a marca do carro',
+       severity: "danger",
+        life: 3000,
       });
       formularioPreenchido = false;
     }
 
     if (!this.modelo) {
-      this.alert.show({
-        description: 'Informe o modelo do carro',
-        type: AlertType.DANGER,
-        delay: 3000,
+      this.alert.add({
+        summary: "Erro!",
+        detail: 'Informe o modelo do carro',
+        severity: "danger",
+        life: 3000,
       });
       formularioPreenchido = false;
     }
 
     if (!this.ano) {
-      this.alert.show({
-        description: 'Informe o ano do carro',
-        type: AlertType.DANGER,
-        delay: 3000,
+      this.alert.add({
+        summary: "Erro!",
+        detail: 'Informe o ano do carro',
+        severity: "danger",
+        life: 3000,
       });
       formularioPreenchido = false;
     }
 
     if (!this.cor) {
-      this.alert.show({
-        description: 'Informe a cor do carro',
-        type: AlertType.DANGER,
-        delay: 3000,
+      this.alert.add({
+        summary: "Erro!",
+        detail: 'Informe a cor do carro',
+        severity: "danger",
+        life: 3000,
       });
       formularioPreenchido = false;
     }
@@ -112,14 +117,14 @@ export class CarroFormComponent implements OnInit {
         this.carroService.atualizar(this.id, carro).subscribe({
           next: () => {
             this.navegarParaListagem()
-            this.alert.show({description: 'Registro atualizado com sucesso', type: AlertType.SUCCESS, delay: 3000})
+            this.alert.add({summary: "Sucesso",detail: 'Registro atualizado com sucesso', severity: "success", life: 3000})
           },
         });
       } else {
         this.carroService.criar(carro).subscribe({
           next: () => {
             this.navegarParaListagem()
-            this.alert.show({description: 'Registro criado com sucesso', type: AlertType.SUCCESS, delay: 3000})
+            this.alert.add({summary: "Sucesso", detail: 'Registro criado com sucesso', severity: "success", life: 3000})
           },
         });
       }

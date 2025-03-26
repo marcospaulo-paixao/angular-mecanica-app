@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Carro} from '../carro.model';
 import {CarroService} from '../carro.service';
 import {Router} from '@angular/router';
-import {AlertService, AlertType} from "../../@core/service/alert.service";
+import {AlertService} from "../../@core/service/alert.service";
 
 @Component({
   selector: 'app-carro-list',
@@ -45,7 +45,7 @@ export class CarroListComponent implements OnInit {
     this.carroService.excluir(id).subscribe({
       next: () => {
         this.carregarTabela();
-        this.alert.show({description: 'Registro excluído com sucesso', type: AlertType.SUCCESS, delay: 3000})
+        this.alert.add({summary: "Sucesso", detail: 'Registro excluído com sucesso', severity: "success", life: 3000})
       },
     });
   }

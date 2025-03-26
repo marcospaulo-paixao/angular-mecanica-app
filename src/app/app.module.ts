@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { CoreModule } from './@core/core.module';
 import { InicioModule } from './inicio/inicio.module';
 import { CarroModule } from './carro/carro.module';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { CarroModule } from './carro/carro.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     CoreModule,
     InicioModule,
