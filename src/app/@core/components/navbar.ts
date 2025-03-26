@@ -40,7 +40,7 @@ import {Router} from '@angular/router';
     </nav>
   `,
 })
-export class NavbarComponent {
+export class Navbar {
 
   menuItems = [
     {label: 'Inicio', link: '/inicio', icon: 'fas fa-home'},
@@ -52,6 +52,7 @@ export class NavbarComponent {
   isDarkTheme = true;
 
   constructor(private router: Router) {
+    document.documentElement.setAttribute('data-bs-theme', this.isDarkTheme ? 'dark' : 'light');
   }
 
   isActive(link: string): boolean {
