@@ -61,6 +61,35 @@ import { CarroModule } from './carro/carro.module';
 export class AppModule { }
 ```
 
+### Passo 3: Criar e Configurar as Rotas no AppRoutingModule
+
+As rotas são responsáveis por definir os caminhos de navegação na aplicação. Aqui estamos adicionando a rota para o módulo `Carro`.
+
+```typescript
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+  {
+    path: 'inicio',
+    loadChildren: () =>
+      import('./inicio/inicio.module').then((m) => m.InicioModule),
+  },
+  {
+    path: 'carro',
+    loadChildren: () =>
+      import('./carro/carro.module').then((m) => m.CarroModule),
+  },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
+```
+
 ---
 
 ## 2. Criar o Modelo (`Model`)
@@ -403,10 +432,7 @@ export class CarroFormComponent implements OnInit {
 
   salvar() {
     let formularioPreenchido: boolean = true;
-    
- ```
 
-```typescript
     if (!this.proprietario) {
       this.alert.add({
         summary: "Erro!",
@@ -547,10 +573,6 @@ No `carro-form.component.html`, insira o formulário:
       type="text"
     />
   </div>
-```
-
-```html
-
 
   <div class="d-flex justify-content-end gap-2">
     <button (click)="navegarParaListagem()" class="btn btn-outline-danger">
