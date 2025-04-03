@@ -585,6 +585,37 @@ No `carro-form.component.html`, insira o formulário:
 </div>
 
 ```
+
+## 5. Incluir o Item no Menu
+
+No arquivo `src/app/@core/components/navbar.ts`, inclua o item do menu do módulo criado no `menuItems`:
+
+```typescript
+export class Navbar {
+
+  menuItems = [
+    { label: 'Inicio', link: '/inicio', icon: 'fas fa-home' },
+    { label: 'Marca', link: '/marca', icon: 'fas fa-tag' },
+    { label: 'Modelo', link: '/modelo', icon: 'fas fa-car' },
+    { label: 'Carro', link: '/carro', icon: 'fas fa-tools' },
+  ];
+
+  isDarkTheme = true;
+
+  constructor(private router: Router) {
+    document.documentElement.setAttribute('data-bs-theme', this.isDarkTheme ? 'dark' : 'light');
+  }
+
+  isActive(link: string): boolean {
+    return this.router.url.startsWith(link);
+  }
+
+  toggleTheme(): void {
+    this.isDarkTheme = !this.isDarkTheme;
+    document.documentElement.setAttribute('data-bs-theme', this.isDarkTheme ? 'dark' : 'light');
+  }
+}
+```
 ---
 
 Seguindo este tutorial, você terá um CRUD funcional para gerenciar carros. Teste as rotas e garanta que todas as funcionalidades estejam operando como esperado.
