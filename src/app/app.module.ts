@@ -9,6 +9,8 @@ import { CoreModule } from './@core/core.module';
 import { InicioModule } from './inicio/inicio.module';
 import { CarroModule } from './carro/carro.module';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { MarcaModule } from './marca/marca.module';
+import { ModeloModule } from './modelo/modelo.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +23,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     CoreModule,
     InicioModule,
     CarroModule,
+    MarcaModule,
+    ModeloModule
   ],
   providers: [],
   bootstrap: [AppComponent],
