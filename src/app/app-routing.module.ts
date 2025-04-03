@@ -23,6 +23,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modelo/modelo.module').then((m) => m.ModeloModule),
   },
+  {
+    path: 'proprietario',
+    loadChildren: () =>
+      import('./proprietario/proprietario.module').then(
+        (m) => m.ProprietarioModule
+      ),
+  },
 ];
 
 @NgModule({

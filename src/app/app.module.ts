@@ -8,9 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { CoreModule } from './@core/core.module';
 import { InicioModule } from './inicio/inicio.module';
 import { CarroModule } from './carro/carro.module';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarcaModule } from './marca/marca.module';
 import { ModeloModule } from './modelo/modelo.module';
+import { ProprietarioModule } from './proprietario/proprietario.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,8 @@ import { ModeloModule } from './modelo/modelo.module';
     InicioModule,
     CarroModule,
     MarcaModule,
-    ModeloModule
+    ModeloModule,
+    ProprietarioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

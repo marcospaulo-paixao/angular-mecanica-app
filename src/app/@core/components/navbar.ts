@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
+import { link } from 'fs';
 
 @Component({
   selector: 'app-navbar',
@@ -47,6 +48,7 @@ export class Navbar {
     {label: 'Marca', link: '/marca', icon: 'fas fa-tag'},
     {label: 'Modelo', link: '/modelo', icon: 'fas fa-car'},
     {label: 'Carro', link: '/carro', icon: 'fas fa-tools'},
+    {label: 'Proprietário', link: 'proprietario', icon: 'fas fa-user'}
   ];
 
   isDarkTheme = true;
