@@ -48,7 +48,8 @@ export class Navbar {
     {label: 'Marca', link: '/marca', icon: 'fas fa-tag'},
     {label: 'Modelo', link: '/modelo', icon: 'fas fa-car'},
     {label: 'Carro', link: '/carro', icon: 'fas fa-tools'},
-    {label: 'Proprietário', link: 'proprietario', icon: 'fas fa-user'}
+    {label: 'Proprietário', link: 'proprietario', icon: 'fas fa-user'},
+    {label: 'Usuário', link: 'usuario', icon: 'fas fa-circle-user'}
   ];
 
   isDarkTheme = true;

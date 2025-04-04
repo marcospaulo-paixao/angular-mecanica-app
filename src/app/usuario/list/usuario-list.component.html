@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <h2 class="h2">Cadastro de Usuarios</h2>
+  <button (click)="navegarParaFormulario()" class="btn btn-success mt-5">
+    <i class="fas fa-plus"></i> Cadastrar
+  </button>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Senha</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.nome }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.senha }}</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button
+              (click)="navegarParaFormulario(usuario.id)"
+              class="btn btn-primary"
+            >
+              <i class="fas fa-edit"></i> Editar
+            </button>
+            <button (click)="excluir(usuario.id!)" class="btn btn-danger">
+              <i class="fas fa-trash"></i> Excluir
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-container [ngPlural]="usuarios?.length ?? 0">
+    <ng-template ngPluralCase="=0">Nenhum item encontrado.</ng-template>
+    <ng-template ngPluralCase="=1">1 item encontrado.</ng-template>
+    <ng-template ngPluralCase="other"
+      >{{ usuarios!.length! }} itens encontrados.</ng-template
+    >
+  </ng-container>
+</div>

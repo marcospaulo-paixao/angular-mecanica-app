@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarcaModule } from './marca/marca.module';
 import { ModeloModule } from './modelo/modelo.module';
 import { ProprietarioModule } from './proprietario/proprietario.module';
+import { UsuarioModule } from './usuario/usuario.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { ProprietarioModule } from './proprietario/proprietario.module';
     MarcaModule,
     ModeloModule,
     ProprietarioModule,
+    UsuarioModule
   ],
   providers: [],
   bootstrap: [AppComponent],
